@@ -1,0 +1,26 @@
+<h2><i class="fa fa-cutlery"></i> Réservation d'une table</h2>
+
+<form class="generic-form" method="post">
+	<fieldset>
+		<legend>
+			Informations
+		</legend>
+
+		<ul>
+			<li>
+				<label for="bookingDate">Date de réservation : </label>
+				<input type="date" name="bookingDate" id="bookingDate">
+				<label> à 
+					<input type="time" name="bookingTime">
+				</label>
+			</li>
+			<li>
+				<label for="numberOfSeats">Nombre de couverts : </label>
+				<input type='number' name="numberOfSeats" id="numberOfSeats" min='1' max='10' value="1">
+			</li>
+		</ul>
+	</fieldset>
+
+	<button type="submit" class="button button-primary">Réserver</button>
+	<a href="<?= $requestUrl ?>" class="button button-cancel small">Annuler</a>
+</form>

@@ -1,0 +1,34 @@
+<h2><i class="fa fa-lock"></i> Se connecter avec un compte utilisateur</h2>
+
+<form class="generic-form" method="post">
+	<?php if(isset($errorMessage)) : ?>
+
+		<div class="error-message">
+			<h3><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+				Il y a une erreur dans le formulaire
+			</h3>
+			<p><?= $errorMessage ?></p>
+		</div>
+
+	<?php endif ?>
+
+	<fieldset>
+		<legend>
+			Informations d'authentification
+		</legend>
+		
+		<ul>
+			<li>
+				<label for="email">E-mail : </label>
+				<input type="email" name="email" id="email" value="<?= $form->getFormFields()['email'] ?>">
+			</li>
+			<li>
+				<label for="password">Mot de passe : </label>
+				<input type="password" name="password" id="password">
+			</li>
+		</ul>
+	</fieldset>
+	
+	<button type="submit" class="button button-primary">Connection</button>
+	<a href="<?= $requestUrl ?>" class="button button-cancel small">Annuler</a>
+</form>

@@ -1,0 +1,70 @@
+<h2><i class="fa fa-user"></i> Creation d'un compte client</h2>
+
+<form class="generic-form" method="post">
+	<?php if (isset($errorMessage)) :?>
+	
+		<div class="error-message">
+			<h3><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+				Il y a une erreur dans le formulaire</h3>
+			<p><?= $errorMessage ?></p>
+		</div>
+	
+	<?php endif ?>
+
+	<fieldset>
+		<legend>
+			<i class="fa fa-book"></i> Identité et coordonnées
+		</legend>
+		
+		<ul>
+			<li>
+				<label for="lastName">Nom : </label>
+				<input type="text" name="lastName" id="lastName" value="<?= $form->getFormFields()['lastName'] ?>">
+			</li>
+			<li>
+				<label for="firstName">Prénom : </label>
+				<input type="text" name="firstName" id="firstName" value="<?= $form->getFormFields()['firstName'] ?>">
+			</li>
+			<li>
+				<label for="birthDate">Date de naissance : </label>
+				<input type="date" name="birthDate" id="birthDate" value="<?= $form->getFormFields()['birthDate'] ?>">
+			</li>
+			<li>
+				<label for="address" class="textarea">Adresse : </label>
+				<textarea name="address" id="address"><?= $form->getFormFields()['address'] ?></textarea>
+			</li>
+			<li>
+				<label for="city">Ville : </label>
+				<input type="text" name="city" id="city" value="<?= $form->getFormFields()['city'] ?>">
+			</li>
+			<li>
+				<label for="zipCode">Code postal : </label>
+				<input type="text" name="zipCode" id="zipCode" class="zip-code" maxlength="5" value="<?= $form->getFormFields()['zipCode'] ?>">
+			</li>
+			<li>
+				<label for="phone">Téléphone : </label>
+				<input type="text" name="phone" id="phone" class="phone" maxlength="10" value="<?= $form->getFormFields()['phone'] ?>">
+			</li>
+		</ul>
+	</fieldset>
+	
+	<fieldset>
+		<legend>
+			<i class="fa fa-lock"></i> Informations d'authentification
+		</legend>
+		
+		<ul>
+			<li>
+				<label for="email">E-mail : </label>
+				<input type="email" name="email" id="email" value="<?= $form->getFormFields()['email'] ?>">
+			</li>
+			<li>
+				<label for="password">Mot de passe : </label>
+				<input type="password" name="password" id="password">
+			</li>
+		</ul>
+	</fieldset>
+	
+	<button type="submit" class="button button-primary">Créer le compte</button>
+	<a href="<?= $requestUrl ?>" class="button button-cancel small">Annuler</a>
+</form>
